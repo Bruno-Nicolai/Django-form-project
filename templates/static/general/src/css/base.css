@@ -1,0 +1,199 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato:wght@100;300;400;700&display=swap");
+
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  outline: none;
+  border: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: var(--color-white);
+  min-height: fit-content;
+  width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  font-weight: 300;
+  font-family: "Lato", sans-serif;
+}
+
+:root {
+  --color-primary: #0073b3;
+  --color-success: #00bf8e;
+  --color-danger: #f75842;
+  --color-danger-variant: rgba(247, 88, 66, 0.4);
+  --color-warning: #ee9900;
+
+  --color-black: #525250;
+  --color-white: #fdfdfd;
+
+  --color-bg-input: #d4d4d4;
+  --color-text: #363739;
+  --color-bg-button: #ebebeb;
+  --color-bg-button-hover: #000;
+
+  --transition: all 400ms ease;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  color: var(--color-text);
+}
+
+p {
+  text-align: justify;
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 300;
+  word-wrap: break-word;
+  margin: 0.6rem 0 0;
+}
+
+h2 {
+  padding: 2rem 0;
+  font-size: 2em;
+  text-transform: uppercase;
+}
+
+a {
+  color: var(--color-primary);
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+a:hover,
+a:focus {
+  color: var(--color-danger-variant);
+  font-weight: 700;
+  text-decoration: none;
+  transition: var(--transition);
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+}
+
+.container-welcome label {
+  width: fit-content;
+  cursor: pointer;
+  padding: 0.5rem 2rem;
+  transition: var(--transition);
+  color: var(--color-text);
+  font-size: 1.5em;
+  font-weight: 700;
+  border-radius: 6px;
+  background-color: var(--color-bg-button);
+  border: 0.1px solid var(--color-text);
+  margin: 0
+}
+
+.container-welcome label:hover,
+.container-welcome label:focus {
+  background-color: var(--color-primary);
+  transition: var(--transition);
+  color: var(--color-white);
+  border: none;
+}
+
+#btn-1:checked ~ .label-1,
+#btn-2:checked ~ .label-2 {
+  background-color: var(--color-bg-button-hover);
+  color: var(--color-white);
+}
+
+input[type="radio"]:checked + .container-welcome label {
+  background-color: var(--color-primary);
+  color: var(--color-white);
+}
+
+.container-fluid {
+  padding: 1.5rem 2.5rem;
+  min-width: fit-content;
+  max-width: 40rem;
+}
+
+.container-sm {
+  min-width: fit-content;
+  max-width: 40rem;
+}
+
+.form-control {
+  width: 100%;
+  margin: 0.2rem 0;
+  font-size: 18px;
+  max-height: 8rem;
+  width: 100%;
+  font: inherit;
+  padding: 0.8rem;
+  border: 1px solid #222;
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-floating {
+  margin: 0.2rem 0;
+  height: 8rem;
+}
+
+.form-select {
+  font-size: 18px;
+  width: 100%;
+  font: inherit;
+  margin: 0.2rem 0;
+  padding: 0.8rem;
+  border: 1px solid #222;
+  border-radius: 8px;
+  box-shadow: 0px 0px 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.form-select:focus,
+.form-control:focus {
+  outline: none;
+  border: 1px solid var(--color-primary);
+  box-shadow: 0px 0px 2px 2px var(--color-primary);
+}
+
+.form-label {
+  margin: 0.8rem 0 0;
+  font-size: 16px;
+}
+
+.btn {
+  width: fit-content;
+  cursor: pointer;
+  margin: 3rem 0 2rem 0;
+}
+
+.btn input,
+.btn-primary {
+  padding: 0.5rem 2rem;
+  transition: var(--transition);
+  color: var(--color-text);
+  font-size: 1.2em;
+  font-weight: 700;
+  border-radius: 6px;
+  background-color: var(--color-bg-button);
+  border: 0.1px solid var(--color-text);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-bg-button-hover);
+  color: var(--color-white);
+  outline: none;
+}
+
+.btn-primary:focus {
+  background-color: var(--color-primary);
+  transition: none;
+}

@@ -1,0 +1,50 @@
+.wrapper {
+  display: flex;
+  flex-direction: column;
+}
+
+.container-logo {
+  max-width: 300px;
+  height: 78px;
+  padding: 0.6rem 0;
+  justify-content: center;
+  align-items: center;
+  gap: 24px;
+  display: inline-flex;
+}
+
+.col img {
+    width: auto;
+    height: 3rem;
+}
+
+.container-welcome {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1rem .8rem 0;
+  gap: .6rem;
+}
+
+.container-welcome .buttons {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem 1rem;
+  margin: 1rem 1rem;
+  gap: 14px;
+}
+
+.container-contact-us {
+  margin: 2rem 0;
+}
+
+.contact-us {
+  font-size: 16px;
+}
+
+span {
+  color: #0073b3;
+  cursor: text;
+}
