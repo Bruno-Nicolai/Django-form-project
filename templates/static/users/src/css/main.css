@@ -1,3 +1,7 @@
+header {
+  width: 100%;
+}
+
 .wrapper {
   display: flex;
   flex-direction: column;
@@ -34,10 +38,6 @@
   padding: 0.5rem 1rem;
   margin: 1rem 1rem;
   gap: 14px;
-}
-
-.container-contact-us {
-  margin: 2rem 0;
 }
 
 .contact-us {

@@ -3,11 +3,18 @@
 
 {% block head %}
   <link rel="stylesheet" href="{% static 'users/src/css/login.css' %}" />
+  <title>{% block title %}Login{% endblock %}</title>
 {% endblock %}
 
 {% block body %}
 
   <div class="container-fluid" style="background: var(--color-white-transparent);">
+    
+    {% if not request.user.is_authenticated %}
+      <div class="alert alert-error fade show" role="alert">
+        <p class="text-black">You are logged out</p>
+      </div>
+    {% endif %}
     
     {% if messages %}
         {% for message in messages %}
@@ -31,11 +38,13 @@
 
       <input class="btn btn-primary text-nowrap" type="submit" value="Login" />
 
+      {% comment %} 
       <div class="forgot-password">
         <p>
-          <a href="#">Lost Your Password?</a>
+          <a href="{% url 'reset' %}">Lost Your Password?</a>
         </p>
       </div>
+      {% endcomment %}
     </form>
 
   </div>
