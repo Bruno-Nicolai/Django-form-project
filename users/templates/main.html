@@ -62,15 +62,15 @@
             <p class="contact-us text-danger" style="margin-left: 1rem;">Please, choose an option to continue.</p>
           </div>
 
-          <div class="container">
+          <div class="container" style="min-width: max-content;">
             <div class="row">
-              <form action="" class="col text-start">
-                <input type="radio" id="btn-1" name="button" />
+              <div class="col text-start">
+                <input type="radio" id="btn-1" name="button" value="Business" />
                 <label class="label label-1" value="Business" for="btn-1" style="margin-right: 1rem;">Business</label>
 
-                <input type="radio" id="btn-2" name="button" />
+                <input type="radio" id="btn-2" name="button" value="Business and Personal" />
                 <label class="label label-2" value="Business and Personal" for="btn-2">Business and Personal</label>
-              </form>
+              </div>
             </div>
           </div>
         </div>
@@ -79,7 +79,7 @@
       <br />
 
       {% comment %}FORM{% endcomment %}
-      <div class="container-fluid" style="background: var(--color-white-transparent);">
+      <div class="container-fluid" id="form" style="background: var(--color-white-transparent); display: none;">
         {% comment %}FRAME{% endcomment %}
         <div class="container-sm" style="flex-direction: column; justify-content: center; align-items: flex-start;">
           {% comment %}CONTENT{% endcomment %}
@@ -101,7 +101,7 @@
               {% comment %}INPUTS{% endcomment %}
               <div class="row">
                 <label for="floatingSelect" class="form-label">* Purpose of Travel</label>
-                <select required class="form-select" id="floatingSelect">
+                <select required name="purpose" class="form-select" id="floatingSelect">
                   <option selected>-- Select One --</option>
                   <option value="1">2001 OFFSITE AND WORKSHOP</option>
                   <option value="2">2002 CLIENT MEETINGS</option>
@@ -116,7 +116,7 @@
 
               <div class="row">
                 <label class="form-label">* Who Are You Metting With / Which Conference / etc. ?</label>
-                <input required type="text" name="username" placeholder="..." class="form-control" autocomplete="off" />
+                <input required type="text" name="meeting" placeholder="..." class="form-control" autocomplete="off" />
               </div>
 
               {% comment %}DATE AND TIME PICKERS{% endcomment %}
@@ -125,7 +125,7 @@
 
                 <div class="col text-sm-start" style="padding-left: 0; padding-right: 0;">
                   <label class="form-label" style="font-size: 12px;">Time</label>
-                  <input required type="time" name="username" class="form-control" autocomplete="off" />
+                  <input required type="time" name="f_conf_st_time" class="form-control" autocomplete="off" />
                 </div>
                 <div class="col text-sm-start" style="padding-right: 0;">
                   <label class="form-label" style="font-size: 12px;">Date</label>
@@ -138,7 +138,7 @@
 
                 <div class="col text-sm-start" style="padding-left: 0; padding-right: 0;">
                   <label class="form-label" style="font-size: 12px;">Time</label>
-                  <input required type="time" name="username" class="form-control" autocomplete="off" />
+                  <input required type="time" name="l_conf_nd_time" class="form-control" autocomplete="off" />
                 </div>
 
                 <div class="col text-sm-start" style="padding-right: 0;">
@@ -151,12 +151,12 @@
               <div class="row align-items-center">
                 <div class="col text-sm-start" style="padding-left: 0; padding-right: 0;">
                   <label class="form-label">* Destination From?</label>
-                  <input required type="text" name="username" placeholder="Type Here" class="form-control" autocomplete="off" />
+                  <input required type="text" name="from_dest" placeholder="Type Here" class="form-control" autocomplete="off" />
                 </div>
 
                 <div class="col text-sm-start" style="padding-right: 0;">
                   <label class="form-label">* Destination To?</label>
-                  <input required type="text" name="username" placeholder="Type Here" class="form-control" autocomplete="off" />
+                  <input required type="text" name="to_dest" placeholder="Type Here" class="form-control" autocomplete="off" />
                 </div>
               </div>
 
@@ -164,21 +164,21 @@
               <div class="row" style="margin-top: 1rem; padding-left: 0; padding-right: 0;">
                 <label for="form-label">* How will you satisfy government regulations on domestic or international travel for the given destinations?</label>
                 <div class="form-floating" style="padding-left: 0; padding-right: 0;">
-                  <textarea required class="form-control" style="height: 8rem;" placeholder="Type here" id="floatingTextarea1"></textarea>
+                  <textarea required name="tarea_i" class="form-control" style="height: 8rem;" placeholder="Type here" id="floatingTextarea1"></textarea>
                 </div>
               </div>
 
               <div class="row" style="margin-top: 1rem; padding-left: 0; padding-right: 0;">
                 <label for="form-label">Additional Travel:</label>
                 <div class="form-floating" style="padding-left: 0; padding-right: 0;">
-                  <textarea class="form-control" style="height: 8rem;" placeholder="Type here" id="floatingTextarea1"></textarea>
+                  <textarea name="tarea_ii" class="form-control" style="height: 8rem;" placeholder="Type here" id="floatingTextarea1"></textarea>
                 </div>
               </div>
 
               <div class="row" style="margin-top: 1rem; padding-left: 0; padding-right: 0;">
-                <label for="form-label">Genneral Comments::</label>
+                <label for="form-label">Genneral Comments:</label>
                 <div class="form-floating" style="padding-left: 0; padding-right: 0;">
-                  <textarea class="form-control" style="height: 8rem;" placeholder="Type here" id="floatingTextarea1"></textarea>
+                  <textarea name="tarea_iii" class="form-control" style="height: 8rem;" placeholder="Type here" id="floatingTextarea1"></textarea>
                 </div>
               </div>
 
@@ -192,7 +192,5 @@
     </div>
   </main>
 
-  {% block scripts %}
-    <script src="{% static 'users/src/js/main.js' %}"></script>
-  {% endblock %}
+  <script type="text/javascript" src="{% static 'users/src/js/main.js' %}"></script>
 {% endblock %}
